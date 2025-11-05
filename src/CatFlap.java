@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class CatFlap {
     private static flapState flapState;
-    private ArrayList<Cat> catsInTheHouse;
+    private ArrayList<Cat> registeredCats;
+
 
     public static void main(String[] args) {
         CatFlap system = new CatFlap(flapState.LUKKET);
         // Vi tilføjer lige nogle katte
         system.populateCatList();
-
     }
 
     public CatFlap(flapState flapState) {
@@ -25,34 +25,43 @@ public class CatFlap {
     }
 
     public boolean canEnter(Cat cat ) {
+        int catId = cat.getChipId();
+        for (Cat entry : registeredCats) {
+            // Hvis katten som vi tjekker efter findes i listen
+            if (cat.getChipId() == catId);
+        }
+        // Så returner at den godt må åbne
         return true;
     }
 
     public boolean canExit (Cat cat) {
         return false;
     }
-
     /**
      * Er katten registeret
      * @param cat
      * @return
      */
     public boolean catRegistered(Cat cat) {
-        return true;
+
     }
 
 
-    public void registerCat(int chipId) {
-        // tilføj
+    public void registerCat(Cat cat) {
+        registeredCats.add(cat);
+
+        // Kun registrerede katte må komme ind, men alle katte (registrerede eller ej) må gå ud
+        // hvis indstillingen tillader det.
+
     }
 
     public void getRegisteredCatsCount() {}
 
     private void populateCatList () {
-        catsInTheHouse.addAll(java.util.List.of(
-                new Cat("Tom", 1),
-                new Cat("Jerry", 2),
-                new Cat("Torben", 3)));
+        registeredCats.addAll(java.util.List.of(
+                new Cat( 1),
+                new Cat( 2),
+                new Cat( 3)));
     }
 
 }
