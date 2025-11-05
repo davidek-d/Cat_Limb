@@ -6,11 +6,12 @@ public class CatFlap {
     private static flapState flapState;
     private ArrayList<Cat> catsInTheHouse;
 
-
     public static void main(String[] args) {
         CatFlap system = new CatFlap(flapState.LUKKET);
-    }
+        // Vi tilføjer lige nogle katte
+        system.populateCatList();
 
+    }
 
     public CatFlap(flapState flapState) {
         this.flapState = flapState.LUKKET;
