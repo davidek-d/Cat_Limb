@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CatFlap {
     private flapState flapState;
-    private ArrayList<Cat> registeredCats;
+    private ArrayList<Cat> registeredCats = new ArrayList<>();
 
     public static void main(String[] args) {
         CatFlap system = new CatFlap();
@@ -24,28 +24,31 @@ public class CatFlap {
     }
 
     public boolean canEnter(Cat cat ) {
-        int catId = cat.getChipId();
-        for (Cat entry : registeredCats) {
-            // Hvis katten som vi tjekker efter findes i listen
-            if (cat.getChipId() == catId);
+        for (Cat element : registeredCats) {
+            if (element.getChipId() == cat.getChipId()) {
+                return true;
+            }
         }
-        // Så returner at den godt må åbne
-        return true;
+        return false;
     }
+
+//
+//    int catId = cat.getChipId();
+//        for (Cat entry : registeredCats) {
+//        // Hvis katten som vi tjekker efter findes i listen
+//        if (cat.getChipId() == catId);
+//    }
+//    // Så returner at den godt må åbne
+//        return true;
 
     public boolean canExit (Cat cat) {
         return false;
     }
     /**
-     * Er katten registeret
+     * Registrer katten
      * @param cat
      * @return
      */
-    public boolean catRegistered(Cat cat) {
-
-    }
-
-
     public void registerCat(Cat cat) {
         registeredCats.add(cat);
 
