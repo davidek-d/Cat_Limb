@@ -3,17 +3,16 @@ import java.util.ArrayList;
 
 
 public class CatFlap {
-    private static flapState flapState;
+    private flapState flapState;
     private ArrayList<Cat> registeredCats;
 
-
     public static void main(String[] args) {
-        CatFlap system = new CatFlap(flapState.LUKKET);
+        CatFlap system = new CatFlap();
         // Vi tilføjer lige nogle katte
         system.populateCatList();
     }
 
-    public CatFlap(flapState flapState) {
+    public CatFlap() {
         this.flapState = flapState.LUKKET;
     }
 

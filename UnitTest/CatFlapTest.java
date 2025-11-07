@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +8,8 @@ public class CatFlapTest {
 
     @BeforeEach
     void setUp() {
-        s = new CatFlap(flapState.LUKKET);
+        s = new CatFlap();
+        assertEquals(flapState.LUKKET, s.getMode());
     }
 
     @Test
