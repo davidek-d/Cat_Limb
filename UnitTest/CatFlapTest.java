@@ -19,10 +19,16 @@ public class CatFlapTest {
 
     @Test
     void setMode() {
+        s = new CatFlap();
+        // Ændr dens state til at være åben
+        s.setMode(flapState.IND_UD);
+        assertEquals(flapState.IND_UD, s.getMode());
+
     }
 
     @Test
     void canEnter() {
+
     }
 
     @Test
